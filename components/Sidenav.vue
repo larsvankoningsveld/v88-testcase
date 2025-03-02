@@ -2,26 +2,27 @@
 import { ref } from 'vue'
 
 const navItems = ref([
-  'Dashboard',
-  'Projecten',
-  'Berichten',
-  'Eigen Projecten',
-  'Notificaties',
-  'To-do\'s',
-  'Profiel'
+  { name: 'Dashboard', icon: '🐶', link: '#' },
+  { name: 'Projecten', icon: '🐱', link: '#' },
+  { name: 'Berichten', icon: '🐭', link: '#' },
+  { name: 'Eigen Projecten', icon: '🐹', link: '#' },
+  { name: 'Notificaties', icon: '🐰', link: '#' },
+  { name: 'To-do\'s', icon: '🦊', link: '#' },
+  { name: 'Profiel', icon: '🐻', link: '#' }
 ])
 </script>
 
 <template>
-  <div>
-    <button>
+  <div class="flex flex-col p-4 gap-16">
+    <button class="self-end">
       X
     </button>
     <nav>
-      <ul>
+      <ul class="flex flex-col gap-4">
         <li v-for="item in navItems">
-          <a href="">
-            {{ item }}
+          <a :href="item.link">
+            {{item.icon}}
+            {{ item.name }}
           </a>
         </li>
       </ul>
