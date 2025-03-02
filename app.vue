@@ -10,7 +10,9 @@
       main
     </div>
   </main>
-  <div class="bg-purple-100 col-span-2 min-h-80">
-    footer
+  <div class="bg-grey-900 col-span-2 min-h-80 flex justify-center items-center">
+    <h2 class="text-3xl text-white">
+      Footer
+    </h2>
   </div>
 </template>
