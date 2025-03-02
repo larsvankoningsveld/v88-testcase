@@ -10,7 +10,8 @@ export const mockProjects = [
     urgency: 0,
     urgencyDesc: '',
     budget: 0,
-    budgetKnown: true
+    budgetKnown: true,
+    status: 0
   },
   {
     anonymous: true,
@@ -23,7 +24,8 @@ export const mockProjects = [
     urgency: 1,
     urgencyDesc: '',
     budget: 2,
-    budgetKnown: true
+    budgetKnown: true,
+    status: 1
   },
   {
     anonymous: true,
@@ -36,6 +38,7 @@ export const mockProjects = [
     urgency: 2,
     urgencyDesc: '',
     budget: 3,
-    budgetKnown: true
+    budgetKnown: true,
+    status: 1
   }
 ]
