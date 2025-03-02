@@ -22,7 +22,8 @@ const navItems = ref([
 
 <template>
   <div class="flex flex-col p-5 gap-20 bg-white h-full">
-    <button @click="collapsed = !collapsed" class="self-end">
+    <button @click="collapsed = !collapsed"
+      class="self-end hover:cursor-pointer hover:bg-blue-50 active:bg-blue-50 rounded p-2">
       <div v-if="collapsed">
         <img src="assets/svg/unfold.svg" class="min-w-[36px]" alt="">
       </div>
