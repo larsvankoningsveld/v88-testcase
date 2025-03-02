@@ -6,7 +6,7 @@
     <div class="bg-blue-100">
       <Topbar />
     </div>
-    <div class="bg-[#F2F7FA] p-16">
+    <div class="bg-[#F2F7FA] p-20">
       <slot />
     </div>
   </main>
