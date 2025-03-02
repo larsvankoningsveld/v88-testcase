@@ -5,7 +5,7 @@ const navItems = ref([
   { name: 'Dashboard', icon: '🐶', link: '#' },
   { name: 'Projecten', icon: '🐱', link: '#' },
   { name: 'Berichten', icon: '🐭', link: '#' },
-  { name: 'Eigen Projecten', icon: '🐹', link: '#' },
+  { name: 'Eigen Projecten', icon: '🐹', link: '/' },
   { name: 'Notificaties', icon: '🐰', link: '#' },
   { name: 'To-do\'s', icon: '🦊', link: '#' },
   { name: 'Profiel', icon: '🐻', link: '#' }
@@ -13,19 +13,24 @@ const navItems = ref([
 </script>
 
 <template>
-  <div class="flex flex-col p-4 gap-16">
+  <div class="flex flex-col p-4 gap-16 bg-white h-full">
     <button class="self-end">
-      X
-    </button>
-    <nav>
-      <ul class="flex flex-col gap-4">
-        <li v-for="item in navItems">
-          <a :href="item.link">
-            {{item.icon}}
-            {{ item.name }}
-          </a>
-        </li>
-      </ul>
-    </nav>
+      <- </button>
+        <nav>
+          <ul class="flex flex-col gap-4">
+            <li v-for="item in navItems">
+              <a :href="item.link">
+                <div class="flex gap-4 px-2 py-1 hover:bg-blue-100 active:bg-blue-100 rounded">
+                  <div>
+                    {{ item.icon }}
+                  </div>
+                  <div>
+                    {{ item.name }}
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
   </div>
 </template>
