@@ -1,4 +1,14 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    color: var(--color-grey-900);
+  }
+}
+
 @theme {  
   --color-green-50: #ecf8f3;
   --color-green-100: #c3e8da;
@@ -41,3 +51,4 @@
   --color-grey-800: #3a3a3a;
   --color-grey-900: #2d2d2d;
 }
+
