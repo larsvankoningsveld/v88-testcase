@@ -17,10 +17,10 @@ const navItems = ref([
     <button class="self-end">
       <- </button>
         <nav>
-          <ul class="flex flex-col gap-4">
+          <ul class="flex flex-col gap-8">
             <li v-for="item in navItems">
               <a :href="item.link">
-                <div class="flex gap-4 px-2 py-1 hover:bg-blue-100 active:bg-blue-100 rounded">
+                <div class="flex gap-4 px-2 py-1 hover:bg-blue-50 active:bg-blue-50 rounded-lg">
                   <div>
                     {{ item.icon }}
                   </div>
