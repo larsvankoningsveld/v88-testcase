@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white border-l-3 border-grey-50 flex h-full items-center justify-between">
+  <nav class="bg-white border-l-2 border-grey-50 flex h-full items-center justify-between">
     <ul class="flex gap-16 px-8 items-center">
       <li><a href="/">
           <div class="px-6 py-2 bg-green-500 rounded text-white">Logo</div>
