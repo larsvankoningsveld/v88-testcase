@@ -1,7 +1,7 @@
 <template>
   <main class="h-screen grid grid-cols-[14rem_1fr] grid-rows-[6rem_1fr] grid-">
     <div class="bg-red-100 row-span-2">
-      sidebar
+      <Sidenav />
     </div>
     <div class="bg-blue-100">
       topbar
