@@ -21,7 +21,7 @@ const navItems = ref([
 </script>
 
 <template>
-  <div class="flex flex-col p-4 gap-20 bg-white h-full">
+  <div class="flex flex-col p-5 gap-20 bg-white h-full">
     <button @click="collapsed = !collapsed" class="self-end">
       <div v-if="collapsed">
         <img src="assets/svg/unfold.svg" class="min-w-[36px]" alt="">
@@ -34,7 +34,8 @@ const navItems = ref([
       <ul class="flex flex-col gap-10">
         <li v-for="item in navItems">
           <a :href="item.link">
-            <div class="flex gap-4 px-2 py-1 hover:bg-blue-50 active:bg-blue-50 rounded-lg">
+            <div :class="{ 'bg-blue-50': $route.path == item.link }"
+              class="flex gap-4 px-4 py-2 hover:bg-blue-50 active:bg-blue-50 rounded-lg">
               <img :src="item.icon" class="min-w-[28px]" alt="#">
               <div class="whitespace-nowrap text-xl" :class="{ hidden: collapsed }">
                 {{ item.name }}
