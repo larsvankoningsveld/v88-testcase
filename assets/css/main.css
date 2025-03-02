@@ -6,6 +6,7 @@
 @layer base {
   body {
     color: var(--color-grey-900);
+    font-weight: 300;
   }
 }
 
