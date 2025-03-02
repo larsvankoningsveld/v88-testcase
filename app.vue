@@ -1,10 +1,10 @@
 <template>
-  <main class="h-screen grid grid-cols-[13rem_1fr] grid-rows-[6rem_1fr] grid-">
+  <main class="h-screen grid grid-cols-[13rem_1fr] grid-rows-[5rem_1fr] grid-">
     <div class="bg-red-100 row-span-2">
       <Sidenav />
     </div>
     <div class="bg-blue-100">
-      topbar
+      <Topbar />
     </div>
     <div class="bg-green-100">
       main
