@@ -21,22 +21,22 @@ const navItems = ref([
 </script>
 
 <template>
-  <div class="flex flex-col p-4 gap-16 bg-white h-full">
+  <div class="flex flex-col p-4 gap-20 bg-white h-full">
     <button @click="collapsed = !collapsed" class="self-end">
       <div v-if="collapsed">
-        <img src="assets/svg/unfold.svg" alt="">
+        <img src="assets/svg/unfold.svg" class="min-w-[36px]" alt="">
       </div>
       <div v-else>
-        <img src="assets/svg/collapse.svg" alt="">
+        <img src="assets/svg/collapse.svg" class="min-w-[36px]" alt="">
       </div>
     </button>
     <nav>
-      <ul class="flex flex-col gap-8">
+      <ul class="flex flex-col gap-10">
         <li v-for="item in navItems">
           <a :href="item.link">
             <div class="flex gap-4 px-2 py-1 hover:bg-blue-50 active:bg-blue-50 rounded-lg">
-              <img :src="item.icon" alt="#" class="h-4 w-4">
-              <div :class="{ hidden: collapsed }">
+              <img :src="item.icon" class="min-w-[28px]" alt="#">
+              <div class="whitespace-nowrap text-xl" :class="{ hidden: collapsed }">
                 {{ item.name }}
               </div>
             </div>
