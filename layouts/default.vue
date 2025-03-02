@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen grid grid-cols-[13rem_1fr] grid-rows-[4.5rem_1fr] ">
+  <div class="h-screen grid grid-cols-[fit-content(1rem)_1fr] grid-rows-[4.5rem_1fr] ">
     <div class="bg-red-100 row-span-2">
       <Sidenav />
     </div>
