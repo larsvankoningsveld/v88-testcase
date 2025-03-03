@@ -35,7 +35,7 @@ const navItems = ref([
       <ul class="flex flex-col gap-10">
         <li v-for="item in navItems">
           <a :href="item.link">
-            <div :class="{ 'bg-blue-50': $route.path == item.link }"
+            <div :class="{ 'bg-blue-50 font-normal': $route.path == item.link }"
               class="flex gap-4 px-4 py-2 hover:bg-blue-50 active:bg-blue-50 rounded-lg">
               <img :src="item.icon" class="min-w-[28px]" alt="#">
               <div class="whitespace-nowrap text-xl" :class="{ hidden: collapsed }">
