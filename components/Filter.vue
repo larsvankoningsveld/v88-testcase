@@ -16,19 +16,20 @@ import chevron from "assets/svg/chevron.svg";
     </button>
     <div
       :id="id"
-      class="inset-[unset] bg-white p-8 shadow rounded-xl relative mt-2"
+      class="inset-[unset] bg-white p-6 shadow rounded-xl relative mt-2"
       popover="auto"
     >
-      <div v-for="item in list">
-        <ul>
-          <li class="flex gap-2 items-center">
-            <input type="checkbox" :checked="item.checked" />
-            <span>
-              {{ item.label }}
-            </span>
-          </li>
-        </ul>
-      </div>
+      <ul class="mb-6">
+        <li
+          v-for="item in list"
+          class="flex gap-4 text-lg py-2 items-center border-grey-100 not-last:border-b"
+        >
+          <input type="checkbox" role="checkbox" :checked="item.checked" />
+          <span>
+            {{ item.label }}
+          </span>
+        </li>
+      </ul>
       <div class="flex gap-2">
         <button class="btn-secondary">Annuleer</button>
         <button class="btn-primary">Bevestigen</button>
