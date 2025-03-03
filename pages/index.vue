@@ -5,8 +5,8 @@ import { mockProjects } from '~/assets/data/ownProjects';
 <template>
   <div>
     <div class="flex justify-between mb-16">
-      <h1 class="text-4xl">Eigen projecten</h1>
-      <button class="rounded-3xl px-4 py-2 bg-blue-900 text-white">
+      <h1 class="text-5xl font-medium">Eigen projecten</h1>
+      <button class="rounded-3xl px-8 py-2 bg-blue-900 text-white">
         + Nieuw project maken
       </button>
     </div>

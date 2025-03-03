@@ -6,7 +6,7 @@
     <div class="bg-blue-100">
       <Topbar />
     </div>
-    <div class="bg-[#F2F7FA] p-20">
+    <div class="bg-[#F2F7FA] px-28 py-22">
       <slot />
     </div>
     <div class="bg-grey-900 col-span-2 min-h-80 flex justify-center items-center">
