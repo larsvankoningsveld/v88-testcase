@@ -14,6 +14,11 @@ import plus from "assets/svg/plus.svg"
         </span>
       </a>
     </div>
+    <div class="flex gap-4 mb-8">
+      <Filter id="filter-1" />
+      <Filter id="filter-2" />
+      <Filter id="filter-3" />
+    </div>
     <div class="grid grid-cols-2 gap-4">
       <div v-for="project in mockProjects">
         <OwnProject :project="project" />
