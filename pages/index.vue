@@ -1,98 +1,12 @@
 <script setup>
 import { mockProjects } from "~/assets/data/ownProjects";
 import plus from "assets/svg/plus.svg";
-
-const systemList = [
-  {
-    label: "Systeem 1",
-    checked: false,
-  },
-  {
-    label: "Systeem 2",
-    checked: false,
-  },
-  {
-    label: "Systeem 3",
-    checked: false,
-  },
-  {
-    label: "Systeem 4",
-    checked: false,
-  },
-  {
-    label: "Systeem 5",
-    checked: false,
-  },
-];
-
-const sectorList = [
-  {
-    label: "Informatietechnologie (IT)",
-    checked: false,
-  },
-  {
-    label: "Financiële sector",
-    checked: false,
-  },
-  {
-    label: "Gezondheidszorg",
-    checked: false,
-  },
-  {
-    label: "Onderwijs",
-    checked: false,
-  },
-  {
-    label: "Overheid",
-    checked: false,
-  },
-  {
-    label: "Telecommunicatie",
-    checked: false,
-  },
-  {
-    label: "Detailhandel en E-commerce",
-    checked: false,
-  },
-  {
-    label: "Productie en Logistiek",
-    checked: false,
-  },
-  {
-    label: "Entertainment en Media",
-    checked: false,
-  },
-];
-
-const urgencyList = [
-  {
-    label: "Beetje urgent",
-    checked: false,
-  },
-  {
-    label: "Standaard urgent",
-    checked: false,
-  },
-  {
-    label: "Fucking urgent",
-    checked: false,
-  },
-];
-
-const statusList = [
-  {
-    label: "Open",
-    checked: false,
-  },
-  {
-    label: "In behandeling",
-    checked: false,
-  },
-  {
-    label: "Gesloten",
-    checked: false,
-  },
-];
+import {
+  sectorList,
+  urgencyList,
+  systemList,
+  statusList,
+} from "assets/data/filterLists";
 </script>
 
 <template>
