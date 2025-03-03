@@ -9,7 +9,7 @@ const systemList = [
   },
   {
     label: "Systeem 2",
-    checked: true,
+    checked: false,
   },
   {
     label: "Systeem 3",
@@ -21,6 +21,75 @@ const systemList = [
   },
   {
     label: "Systeem 5",
+    checked: false,
+  },
+];
+
+const sectorList = [
+  {
+    label: "Informatietechnologie (IT)",
+    checked: false,
+  },
+  {
+    label: "Financiële sector",
+    checked: false,
+  },
+  {
+    label: "Gezondheidszorg",
+    checked: false,
+  },
+  {
+    label: "Onderwijs",
+    checked: false,
+  },
+  {
+    label: "Overheid",
+    checked: false,
+  },
+  {
+    label: "Telecommunicatie",
+    checked: false,
+  },
+  {
+    label: "Detailhandel en E-commerce",
+    checked: false,
+  },
+  {
+    label: "Productie en Logistiek",
+    checked: false,
+  },
+  {
+    label: "Entertainment en Media",
+    checked: false,
+  },
+];
+
+const urgencyList = [
+  {
+    label: "Beetje urgent",
+    checked: false,
+  },
+  {
+    label: "Standaard urgent",
+    checked: false,
+  },
+  {
+    label: "Fucking urgent",
+    checked: false,
+  },
+];
+
+const statusList = [
+  {
+    label: "Open",
+    checked: false,
+  },
+  {
+    label: "In behandeling",
+    checked: false,
+  },
+  {
+    label: "Gesloten",
     checked: false,
   },
 ];
@@ -37,9 +106,9 @@ const systemList = [
     </div>
     <div class="flex gap-4 mb-8">
       <Filter id="filter-1" label="Systeem" :list="systemList" />
-      <Filter id="filter-2" label="Sector" />
-      <Filter id="filter-3" label="Urgentie" />
-      <Filter id="filter-4" label="Status" />
+      <Filter id="filter-2" label="Sector" :list="sectorList" />
+      <Filter id="filter-3" label="Urgentie" :list="urgencyList" />
+      <Filter id="filter-4" label="Status" :list="statusList" />
     </div>
     <div class="grid grid-cols-2 gap-4">
       <div v-for="project in mockProjects">
