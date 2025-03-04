@@ -3,10 +3,6 @@ const props = defineProps(["id", "label"]);
 const list = defineModel();
 
 import chevron from "assets/svg/chevron.svg";
-function update() {
-  list.value[0].checked = !list.value[0].checked;
-  console.log(list.value[0].target);
-}
 </script>
 
 <template>
@@ -20,7 +16,6 @@ function update() {
       </div>
       <img :src="chevron" alt="#" class="w-[24px]" />
     </button>
-    <div>I am {{ list }}</div>
     <div
       :id="id"
       class="inset-[unset] bg-white p-6 shadow rounded-xl relative mt-2"
@@ -28,13 +23,18 @@ function update() {
     >
       <ul class="mb-6">
         <li
-          v-for="item in list.value"
+          v-for="item in list"
           class="flex gap-4 text-lg py-2 items-center border-grey-100 not-last:border-b"
         >
-          <input type="checkbox" role="checkbox" :checked="item.checked" />
-          <span>
+          <input
+            :name="item.label"
+            type="checkbox"
+            role="checkbox"
+            v-model="item.checked"
+          />
+          <label for="item.label">
             {{ item.label }}
-          </span>
+          </label>
         </li>
       </ul>
       <div class="flex gap-2">
