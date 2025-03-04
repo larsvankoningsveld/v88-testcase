@@ -1,7 +1,7 @@
 export const systemList = [
   {
     label: "Systeem 1",
-    checked: false,
+    checked: true,
   },
   {
     label: "Systeem 2",

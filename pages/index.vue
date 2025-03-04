@@ -1,12 +1,18 @@
 <script setup>
+import { ref } from "vue";
 import { mockProjects } from "~/assets/data/ownProjects";
 import plus from "assets/svg/plus.svg";
 import {
+  systemList,
   sectorList,
   urgencyList,
-  systemList,
   statusList,
 } from "assets/data/filterLists";
+
+const systems = ref(systemList);
+const sectors = ref(sectorList);
+const urgencies = ref(urgencyList);
+const statuses = ref(statusList);
 </script>
 
 <template>
@@ -19,10 +25,10 @@ import {
       </a>
     </div>
     <div class="flex gap-4 mb-8">
-      <Filter id="filter-1" label="Systeem" :list="systemList" />
-      <Filter id="filter-2" label="Sector" :list="sectorList" />
-      <Filter id="filter-3" label="Urgentie" :list="urgencyList" />
-      <Filter id="filter-4" label="Status" :list="statusList" />
+      <Filter id="filter-1" label="Systeem" v-model="systems" />
+      <Filter id="filter-2" label="Sector" v-model="sectors" />
+      <Filter id="filter-3" label="Urgentie" v-model="urgencies" />
+      <Filter id="filter-4" label="Status" v-model="statuses" />
     </div>
     <div class="grid grid-cols-2 gap-4">
       <div v-for="project in mockProjects">
