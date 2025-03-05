@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { mockProjects } from "~/assets/data/ownProjects";
 import plus from "assets/svg/plus.svg";
 import {
@@ -14,19 +14,32 @@ const sectors = ref(JSON.parse(JSON.stringify(sectorList)));
 const urgencies = ref(JSON.parse(JSON.stringify(urgencyList)));
 const statuses = ref(JSON.parse(JSON.stringify(statusList)));
 
-//IIF
-const filteredProjects = ref((() => filterSystems(mockProjects))());
+const allProjects = ref(JSON.parse(JSON.stringify(mockProjects)));
+
+const filteredProjects = computed(() => filterSystems(allProjects.value));
 
 function filterSystems(projects) {
-  return projects;
-  // return projects.filter((project) => {
-  //   if (systems.value.some((filter) => filter.checked === true))
-  //     if (project.system === systems.value.checked) return project;
-  //     else return project;
-  // });
+  // If is at least one filter checked
+  if (systems.value.some((filter) => filter.checked === true)) {
+    // Capture those filters in an array
+    const filters = JSON.parse(
+      JSON.stringify(systems.value.filter((filter) => filter.checked === true)),
+    );
+    // Filter projects such that...
+    const result = projects.filter((project) =>
+      // ...it only returns projects with a checked filter
+      filters.forEach((filter) =>
+        filter.label === project.system ? true : false,
+      ),
+    );
+    console.log(result);
+    return result;
+    // If no filters are checked return all projects
+  } else return projects;
 }
 
 function updateSystems(event) {
+  console.log(JSON.parse(JSON.stringify(event.value)));
   systems.value = JSON.parse(JSON.stringify(event.value));
 }
 function updateSectors(event) {
@@ -77,7 +90,7 @@ function updateStatuses(event) {
       />
     </div>
     <div class="grid grid-cols-2 gap-4">
-      <div v-for="project in filteredProjects">
+      <div v-for="project in allProjects">
         <OwnProject :project="project" />
       </div>
     </div>
