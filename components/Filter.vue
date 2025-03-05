@@ -1,9 +1,20 @@
 <script setup>
 import { ref } from "vue";
-const props = defineProps(["id", "label", "list"]);
-const newList = ref(props.list);
-
 import chevron from "assets/svg/chevron.svg";
+const emit = defineEmits("update");
+
+const props = defineProps(["id", "label", "list"]);
+let temp = JSON.parse(JSON.stringify(props.list));
+const newList = ref(JSON.parse(JSON.stringify(props.list)));
+
+function undo() {
+  newList.value = JSON.parse(JSON.stringify(temp));
+}
+
+function update() {
+  temp = JSON.parse(JSON.stringify(newList.value));
+  emit("update", { value: newList });
+}
 </script>
 
 <template>
@@ -17,6 +28,7 @@ import chevron from "assets/svg/chevron.svg";
       </div>
       <img :src="chevron" alt="#" class="w-[24px]" />
     </button>
+    {{ newList }}
     <div
       :id="id"
       class="inset-[unset] bg-white p-6 shadow rounded-xl relative mt-2"
@@ -39,11 +51,10 @@ import chevron from "assets/svg/chevron.svg";
         </li>
       </ul>
       <div class="flex gap-2">
-        <button class="btn-secondary">Annuleer</button>
-        <button
-          @click="$emit('update', { value: newList })"
-          class="btn-primary"
-        >
+        <button @click="undo" :popovertarget="id" class="btn-secondary">
+          Annuleer
+        </button>
+        <button @click="update" class="btn-primary" :popovertarget="id">
           Bevestigen
         </button>
       </div>
