@@ -1,11 +1,12 @@
 <script setup>
 import { ref } from "vue";
 import chevron from "assets/svg/chevron.svg";
-const emit = defineEmits("update");
 
 const props = defineProps(["id", "label", "list"]);
+const emit = defineEmits("update");
+
 let temp = JSON.parse(JSON.stringify(props.list));
-const newList = ref(JSON.parse(JSON.stringify(props.list)));
+const newList = ref(JSON.parse(JSON.stringify(temp)));
 
 function undo() {
   newList.value = JSON.parse(JSON.stringify(temp));
@@ -13,7 +14,7 @@ function undo() {
 
 function update() {
   temp = JSON.parse(JSON.stringify(newList.value));
-  emit("update", { value: newList });
+  emit("update", { value: JSON.parse(JSON.stringify(newList.value)) });
 }
 </script>
 
