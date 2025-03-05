@@ -14,6 +14,18 @@ const sectors = ref(JSON.parse(JSON.stringify(sectorList)));
 const urgencies = ref(JSON.parse(JSON.stringify(urgencyList)));
 const statuses = ref(JSON.parse(JSON.stringify(statusList)));
 
+//IIF
+const filteredProjects = ref((() => filterSystems(mockProjects))());
+
+function filterSystems(projects) {
+  return projects;
+  // return projects.filter((project) => {
+  //   if (systems.value.some((filter) => filter.checked === true))
+  //     if (project.system === systems.value.checked) return project;
+  //     else return project;
+  // });
+}
+
 function updateSystems(event) {
   systems.value = JSON.parse(JSON.stringify(event.value));
 }
@@ -37,6 +49,7 @@ function updateStatuses(event) {
         <span class="text-lg font-light">Nieuw project maken</span>
       </a>
     </div>
+    {{ systems }}
     <div class="flex gap-4 mb-8">
       <Filter
         id="systems"
@@ -64,7 +77,7 @@ function updateStatuses(event) {
       />
     </div>
     <div class="grid grid-cols-2 gap-4">
-      <div v-for="project in mockProjects">
+      <div v-for="project in filteredProjects">
         <OwnProject :project="project" />
       </div>
     </div>
