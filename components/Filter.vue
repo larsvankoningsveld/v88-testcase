@@ -1,6 +1,7 @@
 <script setup>
-const props = defineProps(["id", "label"]);
-const list = defineModel();
+import { ref } from "vue";
+const props = defineProps(["id", "label", "list"]);
+const newList = ref(props.list);
 
 import chevron from "assets/svg/chevron.svg";
 </script>
@@ -23,23 +24,28 @@ import chevron from "assets/svg/chevron.svg";
     >
       <ul class="mb-6">
         <li
-          v-for="item in list"
+          v-for="(filter, index) in newList"
           class="flex gap-4 text-lg py-2 items-center border-grey-100 not-last:border-b"
         >
           <input
-            :name="item.label"
+            :name="filter.label"
             type="checkbox"
             role="checkbox"
-            v-model="item.checked"
+            v-model="newList[index].checked"
           />
-          <label for="item.label">
-            {{ item.label }}
+          <label :for="filter.label">
+            {{ filter.label }}
           </label>
         </li>
       </ul>
       <div class="flex gap-2">
         <button class="btn-secondary">Annuleer</button>
-        <button @click="update" class="btn-primary">Bevestigen</button>
+        <button
+          @click="$emit('update', { value: newList })"
+          class="btn-primary"
+        >
+          Bevestigen
+        </button>
       </div>
     </div>
   </div>
